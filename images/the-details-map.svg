@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1620 1080" preserveAspectRatio="xMidYMid slice">
+  <rect width="1620" height="1080" fill="#EDE7DB"/>
+
+  <!-- Streets, faint ink lines -->
+  <g stroke="#1A1814" stroke-width="1.6" fill="none" opacity="0.4" stroke-linecap="round">
+    <!-- Bredgade (main NE-SW axis) -->
+    <path d="M 980 90 L 770 980"/>
+    <!-- Store Kongensgade -->
+    <path d="M 720 90 L 510 980"/>
+    <!-- Dronningens Tværgade (the street with The Conary) -->
+    <path d="M 320 510 L 1180 590"/>
+    <!-- Olfert Fischers Gade -->
+    <path d="M 380 260 L 1100 320"/>
+    <!-- Sankt Annæ Plads -->
+    <path d="M 420 760 L 1180 830"/>
+    <!-- Toldbodgade -->
+    <path d="M 1230 90 L 1010 980"/>
+    <!-- Adelgade -->
+    <path d="M 460 90 L 280 980"/>
+  </g>
+
+  <!-- Kongens Nytorv: oval public square -->
+  <ellipse cx="720" cy="930" rx="140" ry="48" fill="none" stroke="#1A1814" stroke-width="1.6" opacity="0.45"/>
+
+  <!-- Nyhavn canal -->
+  <path d="M 950 905 L 1480 945" stroke="#1A1814" stroke-width="16" stroke-linecap="round" opacity="0.32"/>
+
+  <!-- Marmorkirken: dot + label -->
+  <circle cx="920" cy="200" r="7" fill="#1A1814"/>
+  <text x="952" y="208" font-family="'Avenir Next', Helvetica, sans-serif" font-size="22" fill="#1A1814" letter-spacing="3.5" font-weight="500">MARMORKIRKEN</text>
+
+  <!-- Kongens Nytorv: label -->
+  <text x="720" y="1020" font-family="'Avenir Next', Helvetica, sans-serif" font-size="22" fill="#1A1814" text-anchor="middle" letter-spacing="3.5" font-weight="500">KONGENS NYTORV</text>
+
+  <!-- Nyhavn: label -->
+  <text x="1215" y="1020" font-family="'Avenir Next', Helvetica, sans-serif" font-size="22" fill="#1A1814" text-anchor="middle" letter-spacing="3.5" font-weight="500">NYHAVN</text>
+
+  <!-- Eldvarm (The Conary) marker, gold -->
+  <circle cx="860" cy="555" r="22" fill="#EBC291"/>
+  <circle cx="860" cy="555" r="8" fill="#0E0E0C"/>
+  <text x="900" y="563" font-family="'Avenir Next', Helvetica, sans-serif" font-size="34" fill="#1A1814" letter-spacing="4" font-weight="700">ELDVARM</text>
+  <text x="900" y="595" font-family="'Libre Baskerville', Georgia, serif" font-size="18" fill="#1A1814" font-style="italic">Dronningens Tværgade 26</text>
+</svg>

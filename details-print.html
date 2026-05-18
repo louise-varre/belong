@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>I Belong — Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.typekit.net/gxt4rsc.css">
+<style>
+@page {
+  size: 148mm 210mm;
+  margin: 0;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --card: #0E0E0C;
+  --text: #E8E4DC;
+  --text-soft: #B8B2A6;
+  --text-mute: #8A867E;
+  --gold: #EBC291;
+  --line: rgba(232, 228, 220, 0.12);
+}
+
+html, body {
+  width: 148mm;
+  background: var(--card);
+}
+
+body {
+  color: var(--text);
+  font-family: 'avenir-next', 'Avenir Next', -apple-system, sans-serif;
+  font-weight: 400;
+  line-height: 1.65;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.page {
+  width: 148mm;
+  height: 210mm;
+  overflow: hidden;
+  position: relative;
+  break-after: page;
+  page-break-after: always;
+  background: var(--card);
+  color: var(--text);
+}
+.page:last-child {
+  break-after: auto;
+  page-break-after: auto;
+}
+
+/* ===== PAGE 1: HERO (matches .card.hero from index.html) ===== */
+.page:first-of-type {
+  background: #000;
+}
+.hero-img {
+  position: absolute;
+  top: 5%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  z-index: 1;
+}
+
+.hero-content {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-title-img {
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.40);
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: screen;
+}
+
+.hero-bottom {
+  position: absolute;
+  bottom: 4%;
+  right: 9%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+  text-align: right;
+}
+
+.hero-logo {
+  width: 38mm;
+  height: auto;
+  display: block;
+  filter: brightness(0) invert(1);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.hero-3dd {
+  width: 32mm;
+  height: auto;
+  display: block;
+  opacity: 0.85;
+}
+
+.hero-dateline {
+  font-family: 'Libre Baskerville', serif;
+  font-style: italic;
+  font-size: 11px;
+  color: var(--text-soft);
+  letter-spacing: 0.04em;
+}
+
+/* ===== PAGE 2: DETAILS (matches .card.overlay-card from index.html) ===== */
+.details-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.overlay-bg {
+  width: 100%;
+  height: 42%;
+  object-fit: cover;
+  object-position: center center;
+  flex-shrink: 0;
+  display: block;
+}
+
+.overlay-panel {
+  width: 100%;
+  padding: 28px 30px 26px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.section-title {
+  font-family: 'Libre Baskerville', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: 18px;
+  letter-spacing: -0.005em;
+}
+
+.detail-block {
+  margin-top: 6px;
+  text-align: left;
+}
+
+.detail-label {
+  font-family: 'avenir-next', 'Avenir Next', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.detail-value {
+  font-family: 'Libre Baskerville', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.detail-value.address-name {
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.detail-time {
+  display: block;
+  margin-top: 4px;
+  font-family: 'avenir-next', 'Avenir Next', sans-serif;
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--text-soft);
+  letter-spacing: 0.04em;
+}
+
+.detail-note {
+  font-family: 'avenir-next', 'Avenir Next', sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--text-soft);
+  margin-top: 8px;
+}
+
+.map-link {
+  display: inline-block;
+  margin-top: 9px;
+  font-family: 'avenir-next', 'Avenir Next', sans-serif;
+  font-style: normal;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 0.5px solid rgba(235, 194, 145, 0.5);
+  padding-bottom: 2px;
+}
+
+.map-link .arrow {
+  display: inline-block;
+  margin-left: 4px;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 28px;
+  margin-top: 14px;
+  width: 100%;
+}
+
+.detail-item {
+  padding-top: 0;
+}
+
+/* RSVP link — same style as map-link */
+.rsvp-wrap {
+  margin-top: 22px;
+  text-align: center;
+}
+
+.rsvp-link {
+  display: inline-block;
+  font-family: 'avenir-next', 'Avenir Next', sans-serif;
+  font-style: normal;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 0.5px solid rgba(235, 194, 145, 0.5);
+  padding-bottom: 2px;
+}
+
+.rsvp-link .arrow {
+  display: inline-block;
+  margin-left: 4px;
+}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: HERO -->
+<section class="page">
+  <img src="images/hero-flame.jpg" alt="" class="hero-img">
+  <div class="hero-content">
+    <img src="images/ibelong-title.png" alt="I Belong" class="hero-title-img">
+    <div class="hero-bottom">
+      <img src="images/eldvarm logo.png" alt="Eldvarm" class="hero-logo">
+      <img src="images/3daysofdesign_White.png" alt="3 Days of Design" class="hero-3dd">
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 2: DETAILS -->
+<section class="page details-page">
+  <img src="images/banner-details.png" alt="" class="overlay-bg">
+  <div class="overlay-panel">
+    <h2 class="section-title">The details</h2>
+
+    <div class="detail-block">
+      <div class="detail-label">Where</div>
+      <div class="detail-value address-name">The Conary — 2nd floor</div>
+      <div class="detail-value">Dronningens Tværgade 26<br>1302 København</div>
+      <a class="map-link" href="https://maps.app.goo.gl/Wfo2yEQa3jx7Vzfo6">View on Google Maps <span class="arrow">→</span></a>
+    </div>
+
+    <div class="details-grid">
+      <div class="detail-item">
+        <div class="detail-label">Preview</div>
+        <div class="detail-value">9 June<span class="detail-time">by appointment</span></div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Exhibition</div>
+        <div class="detail-value">10–12 June<span class="detail-time">10am to 6pm every day</span></div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Talk</div>
+        <div class="detail-value">10 June<span class="detail-time">3 to 4pm</span></div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Drinks</div>
+        <div class="detail-value">10 June<span class="detail-time">4 to 6pm</span></div>
+      </div>
+    </div>
+
+    <div class="rsvp-wrap">
+      <a class="rsvp-link" href="https://ibelong.eldvarm.com">RSVP: ibelong.eldvarm.com <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
