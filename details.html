@@ -13,14 +13,14 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg: #0E0E0C;
-  --text: #E8E4DC;
-  --text-soft: #B8B2A6;
+  --bg: #F4F1ED;
+  --text: #1C1C1C;
+  --text-soft: #6E665C;
   --text-mute: #8A867E;
-  --gold: #EBC291;
-  --line: rgba(232, 228, 220, 0.12);
-  --beige: #FAF6EB;
-  --ink: #1A1916;
+  --gold: #1C1C1C;
+  --line: rgba(28, 28, 28, 0.14);
+  --beige: #F4F1ED;
+  --ink: #1C1C1C;
 }
 
 html { scroll-behavior: smooth; }
@@ -63,7 +63,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(250, 246, 235, 0.94);
+  background: rgba(244, 241, 237, 0.94);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 0.5px solid rgba(26, 25, 22, 0.08);
@@ -116,7 +116,7 @@ nav .rsvp-btn {
   color: var(--beige);
   border: 0.5px solid var(--ink);
   padding: 10px 22px;
-  border-radius: 999px;
+  border-radius: 0;
   transition: background 0.25s ease, color 0.25s ease;
   font-family: 'Open Sans', sans-serif;
   font-size: 12px;
@@ -125,7 +125,7 @@ nav .rsvp-btn {
   text-transform: uppercase;
   text-decoration: none;
 }
-nav .rsvp-btn:hover { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+nav .rsvp-btn:hover { background: transparent; color: var(--ink); border-color: var(--ink); }
 
 .nav-right { display: flex; align-items: center; gap: 30px; }
 .nav-rsvp-mobile { display: none; }
@@ -174,13 +174,13 @@ main { flex: 1; padding: 130px 0 40px; }
 }
 
 h1.page-title {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Libre Baskerville', Georgia, serif;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   font-size: clamp(26px, 3.2vw, 38px);
   line-height: 1.2;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  letter-spacing: normal;
+  text-transform: none;
   color: var(--text);
 }
 
@@ -195,6 +195,8 @@ h1.page-title {
 }
 .location-map img {
   width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
   border-radius: 1px;
   display: block;
 }
@@ -225,7 +227,7 @@ h1.page-title {
   text-transform: uppercase;
   color: var(--gold);
   text-decoration: none;
-  border-bottom: 0.5px solid rgba(235, 194, 145, 0.5);
+  border-bottom: 0.5px solid rgba(28, 28, 28, 0.5);
   padding-bottom: 2px;
 }
 .map-link:hover { border-bottom-color: var(--gold); }
@@ -285,7 +287,7 @@ h1.page-title {
   color: var(--bg);
   border: 0.5px solid var(--gold);
   padding: 16px 36px;
-  border-radius: 999px;
+  border-radius: 0;
   text-decoration: none;
   margin-top: 18px;
   transition: background 0.25s ease, color 0.25s ease;
@@ -327,7 +329,7 @@ footer .footer-line {
     width: 78%;
     max-width: 320px;
     height: 100vh;
-    background: rgba(250, 246, 235, 0.97);
+    background: rgba(244, 241, 237, 0.97);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     flex-direction: column;
@@ -387,7 +389,6 @@ footer .footer-line {
 
 <main>
   <div class="heading">
-    <span class="eyebrow">When &amp; where</span>
     <h1 class="page-title">The Details</h1>
   </div>
 
@@ -412,11 +413,11 @@ footer .footer-line {
 
   <div class="location">
     <div class="location-map">
-      <img src="images/banner-details.png" alt="Map of The Conary location">
+      <img src="images/The Conary Facade.jpg" alt="The Conary, Copenhagen">
     </div>
     <div class="location-text">
       <div class="where-name">The Conary — 2nd floor</div>
-      <div class="where-addr">Dronningens Tværgade 26<br>1302 København</div>
+      <div class="where-addr">Dronningens Tværgade 26<br>1302 København<br>In between Marmorkirken and Kongens Nytorv</div>
       <a class="map-link" href="https://maps.app.goo.gl/Wfo2yEQa3jx7Vzfo6" target="_blank" rel="noopener">View on Google Maps <span class="arrow">→</span></a>
     </div>
   </div>
@@ -424,7 +425,6 @@ footer .footer-line {
 
 <!-- CTA: RSVP -->
 <section class="cta-block">
-  <span class="eyebrow">Please join us</span>
   <h3>Let us know what you'd like to attend.</h3>
   <a class="cta-btn" href="rsvp.html">RSVP →</a>
 </section>

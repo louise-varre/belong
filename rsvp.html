@@ -13,14 +13,14 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg: #0E0E0C;
-  --text: #E8E4DC;
-  --text-soft: #B8B2A6;
+  --bg: #F4F1ED;
+  --text: #1C1C1C;
+  --text-soft: #6E665C;
   --text-mute: #8A867E;
-  --gold: #EBC291;
-  --line: rgba(232, 228, 220, 0.12);
-  --beige: #FAF6EB;
-  --ink: #1A1916;
+  --gold: #1C1C1C;
+  --line: rgba(28, 28, 28, 0.14);
+  --beige: #F4F1ED;
+  --ink: #1C1C1C;
 }
 
 html { scroll-behavior: smooth; }
@@ -63,7 +63,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(250, 246, 235, 0.94);
+  background: rgba(244, 241, 237, 0.94);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 0.5px solid rgba(26, 25, 22, 0.08);
@@ -116,7 +116,7 @@ nav .rsvp-btn {
   color: var(--beige);
   border: 0.5px solid var(--ink);
   padding: 10px 22px;
-  border-radius: 999px;
+  border-radius: 0;
   transition: background 0.25s ease, color 0.25s ease;
   font-family: 'Open Sans', sans-serif;
   font-size: 12px;
@@ -125,8 +125,8 @@ nav .rsvp-btn {
   text-transform: uppercase;
   text-decoration: none;
 }
-nav .rsvp-btn:hover { background: var(--gold); color: var(--ink); border-color: var(--gold); }
-nav .rsvp-btn.active { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+nav .rsvp-btn:hover { background: transparent; color: var(--ink); border-color: var(--ink); }
+nav .rsvp-btn.active { background: transparent; color: var(--ink); border-color: var(--ink); }
 
 .nav-right { display: flex; align-items: center; gap: 30px; }
 .nav-rsvp-mobile { display: none; }
@@ -177,13 +177,13 @@ main {
 }
 
 h1.page-title {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Libre Baskerville', Georgia, serif;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   font-size: clamp(26px, 3.2vw, 38px);
   line-height: 1.2;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  letter-spacing: normal;
+  text-transform: none;
   color: var(--text);
   text-align: center;
   margin-bottom: 24px;
@@ -191,7 +191,7 @@ h1.page-title {
 
 .intro {
   text-align: center;
-  color: var(--text-soft);
+  color: var(--text);
   font-family: 'Libre Baskerville', Georgia, serif;
   font-style: italic;
   font-size: 16px;
@@ -251,7 +251,7 @@ form textarea {
   cursor: pointer;
   transition: border-color 0.2s ease, background 0.2s ease;
 }
-.check-option:hover { border-color: rgba(235, 194, 145, 0.4); }
+.check-option:hover { border-color: rgba(28, 28, 28, 0.4); }
 .check-option input { display: none; }
 .check-option .dot {
   display: inline-block;
@@ -280,20 +280,34 @@ form textarea {
 }
 .check-option:has(input:checked) {
   border-color: var(--gold);
-  background: rgba(235, 194, 145, 0.04);
+  background: rgba(28, 28, 28, 0.04);
 }
 .check-text {
   font-size: 14px;
   color: var(--text);
   line-height: 1.4;
 }
+.opt-name {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 17px;
+  color: var(--text);
+  margin-right: 14px;
+}
+.opt-when {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--text-soft);
+  white-space: nowrap;
+}
 .check-note {
   display: block;
   font-family: 'Libre Baskerville', Georgia, serif;
-  font-size: 12px;
-  font-style: italic;
-  color: var(--text-mute);
-  margin-top: 4px;
+  font-size: 13px;
+  font-style: normal;
+  color: var(--text);
+  margin-top: 5px;
   line-height: 1.4;
 }
 
@@ -310,7 +324,7 @@ form textarea {
   color: var(--gold);
   border: 0.5px solid var(--gold);
   padding: 14px 36px;
-  border-radius: 999px;
+  border-radius: 0;
   background: transparent;
   cursor: pointer;
   transition: background 0.25s ease, color 0.25s ease;
@@ -359,7 +373,7 @@ footer .footer-line {
     width: 78%;
     max-width: 320px;
     height: 100vh;
-    background: rgba(250, 246, 235, 0.97);
+    background: rgba(244, 241, 237, 0.97);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     flex-direction: column;
@@ -408,9 +422,8 @@ footer .footer-line {
 
 <main>
   <div class="container">
-    <span class="eyebrow">Please join us</span>
     <h1 class="page-title">RSVP</h1>
-    <p class="intro">Let us know what you would like to join, and we will be in touch.</p>
+    <p class="intro">Let us know what you would like to join.</p>
 
     <form id="rsvp-form" action="https://formspree.io/f/mrejoake" method="POST">
       <div class="row">
@@ -429,26 +442,24 @@ footer .footer-line {
           <label class="check-option">
             <input type="checkbox" name="preview" value="yes">
             <span class="dot"></span>
-            <span class="check-text">Private preview &nbsp;·&nbsp; 9 June
+            <span class="check-text"><span class="opt-name">Private preview</span><span class="opt-when">9 June</span>
               <span class="check-note">Professionals only.</span>
             </span>
           </label>
           <label class="check-option">
             <input type="checkbox" name="talk" value="yes">
             <span class="dot"></span>
-            <span class="check-text">Talk &nbsp;·&nbsp; 10 June, 3 to 4pm
-              <span class="check-note">Places limited, we will confirm by email.</span>
-            </span>
+            <span class="check-text"><span class="opt-name">Talk</span><span class="opt-when">10 June, 3 to 4pm</span></span>
           </label>
           <label class="check-option">
             <input type="checkbox" name="drinks" value="yes">
             <span class="dot"></span>
-            <span class="check-text">Drinks &nbsp;·&nbsp; 10 June, 4 to 6pm</span>
+            <span class="check-text"><span class="opt-name">Drinks</span><span class="opt-when">10 June, 4 to 6pm</span></span>
           </label>
           <label class="check-option">
             <input type="checkbox" name="exhibition" value="yes">
             <span class="dot"></span>
-            <span class="check-text">Exhibition &nbsp;·&nbsp; 10 to 12 June</span>
+            <span class="check-text"><span class="opt-name">Exhibition</span><span class="opt-when">10 to 12 June</span></span>
           </label>
         </div>
       </div>
@@ -462,7 +473,7 @@ footer .footer-line {
         <button type="submit" class="submit-btn">Send</button>
       </div>
     </form>
-    <div class="thank-you" id="thank-you">Thank you. We will be in touch.</div>
+    <div class="thank-you" id="thank-you">Thank you. We look forward to seeing you.</div>
   </div>
 </main>
 
