@@ -113,7 +113,8 @@
   }
 
   input[type="text"],
-  input[type="email"] {
+  input[type="email"],
+  textarea {
     width: 100%;
     font-family: 'Libre Baskerville', Georgia, serif;
     font-size: 16px;
@@ -124,8 +125,15 @@
     transition: border-color 0.25s ease;
   }
 
+  textarea {
+    resize: vertical;
+    min-height: 88px;
+    line-height: 1.5;
+  }
+
   input[type="text"]:focus,
-  input[type="email"]:focus {
+  input[type="email"]:focus,
+  textarea:focus {
     outline: none;
     border-color: var(--accent);
   }
@@ -277,6 +285,11 @@
           <label class="tick"><input type="checkbox" name="industry" value="Press"><span>Press</span></label>
           <label class="tick"><input type="checkbox" name="industry" value="Other"><span>Other</span></label>
         </div>
+      </div>
+
+      <div class="field">
+        <label for="note">Note <span class="opt">optional</span></label>
+        <textarea id="note" name="note" rows="3"></textarea>
       </div>
 
       <button type="submit" id="submitBtn">Send</button>
